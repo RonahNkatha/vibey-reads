@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../client/dist"));
+  res.sendFile(path.join(__dirname, "../../client/dist", "index.html"));
 });
 
 app.use(routes);
