@@ -31,7 +31,7 @@ const Login = () => {
       body: JSON.stringify(userData),
     };
 
-    fetch("http://localhost:3001/auth/login", options)
+    fetch("/auth/login", options)
       .then((response) => response.json())
       .then((response) => {
         console.log(response);
