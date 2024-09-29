@@ -1,10 +1,10 @@
 import { Model, DataTypes } from "sequelize";
 import sequelize from "../config/connection.js";
-import User from "./user.js"; // Import the User model directly
-import Book from "./bookshelf.js"; // Import the Bookshelf model directly
-import Music from "./music.js"; // Import the Music model directly
+import {User} from "./user.js"; // Import the User model directly
+import {Book} from "./bookshelf.js"; // Import the Bookshelf model directly
+import {Music} from "./music.js"; // Import the Music model directly
 
-export class Vibes extends Model {}
+export class Vibes extends Model { }
 
 export default function VibesFactory(sequelize) {
   Vibes.init(

@@ -17,7 +17,7 @@ export const login = async (req, res) => {
   if (!passwordValid) {
     return res.status(401).json({ message: "Password doesn't match" });
   }
-  const secretKey = process.env.JWT_SECRET_KEY || "";
+  const secretKey = process.env.JWT_SECRET_KEY || "aaa";
   const token = jwt.sign({ username }, secretKey, { expiresIn: "24h" });
   return res.status(201).json({ token });
 };

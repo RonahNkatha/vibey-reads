@@ -1,12 +1,13 @@
-import { Sequelize, DataTypes, Model } from 'sequelize';
+import { DataTypes, Model } from 'sequelize';
 
-export function Music(sequelize) {
-    class Playlist extends Model {} // Define the Playlist model
+export class Music extends Model {}
 
-    Playlist.init(
+// Factory function to initialize the Playlist model
+export function MusicFactory(sequelize) {
+    Music.init(
         {
             music_id: {
-                type: DataTypes.INTEGER, 
+                type: DataTypes.INTEGER,
                 autoIncrement: true,
                 primaryKey: true,
             },
@@ -37,10 +38,12 @@ export function Music(sequelize) {
         },
         {
             sequelize,
+            modelName: 'Playlist', // Specify the model name
             timestamps: false, // Disable automatic timestamps
             underscored: true, // Use snake_case for column names
             freezeTableName: true, // Prevent Sequelize from pluralizing table names
         }
     );
-    return Playlist;
+
+    return Music;
 }

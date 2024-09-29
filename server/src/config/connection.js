@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 import { Sequelize } from 'sequelize';
 
+console.log(process.env.DB_NAME)
+
 // Create a connection object
 const sequelize = process.env.DB_URL
     ? new Sequelize(process.env.DB_URL)
